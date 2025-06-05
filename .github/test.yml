@@ -1,0 +1,11 @@
+name: test
+on:
+  push
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: |
+          env
