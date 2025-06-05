@@ -3,9 +3,15 @@ on:
   push
 
 jobs:
-  docs:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Test
         run: |
-          env
+          env > test.txt
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test
+          path: |
+            test.txt
